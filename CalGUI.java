@@ -1,10 +1,11 @@
+
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 
 public class CalGUI extends JFrame {
@@ -27,16 +28,18 @@ public class CalGUI extends JFrame {
     }
     
     private void setOperatorPad(){
-        operatorPad = new JPanel(new GridLayout(4,2));
-        opBtn = new JButton[8];
+        operatorPad = new JPanel(new GridLayout(5,2));
+        opBtn = new JButton[10];
         operatorPad.add(opBtn[0] = new JButton("/"));
         operatorPad.add(opBtn[1] = new JButton("sqrt"));
         operatorPad.add(opBtn[2] = new JButton("x"));
         operatorPad.add(opBtn[3] = new JButton("-"));
         operatorPad.add(opBtn[4] = new JButton("+"));
         operatorPad.add(opBtn[5] = new JButton("%"));
+        operatorPad.add(opBtn[8] = new JButton("neg"));
+        operatorPad.add(opBtn[7] = new JButton("rec"));
+        operatorPad.add(opBtn[9] = new JButton("<="));
         operatorPad.add(opBtn[6] = new JButton("="));
-        operatorPad.add(opBtn[7] = new JButton("1/x"));
 
     }
     
@@ -84,7 +87,8 @@ public class CalGUI extends JFrame {
         ioArea = new JPanel(new GridLayout(2, 1));
         ioArea.add(expression = new JLabel());
         ioArea.add(inOut = new JLabel());
-        
+        expression.setFont(new Font(null, WIDTH, 15));
+        inOut.setFont(new Font(null, WIDTH, 22));        
     }
     
 }
